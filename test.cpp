@@ -38,17 +38,22 @@ int main()
         numbers.push_back(conversion);
         sort(numbers.begin(), numbers.end());
 
-        if(conversion == numbers[numbers.size() - 1]){
+        if(conversion >= numbers[numbers.size() - 1]){
             cout << conversion << " cm. largest so far! \n";
-        } else if(conversion == numbers[0]){
+            largest = conversion;
+        } else if(conversion <= numbers[0]){
             cout << conversion << " cm. smallest so far! \n";
+            smallest = conversion;
         }
     } 
 
     sort(numbers.begin(), numbers.end());
 
     for(int i = 0; i < numbers.size(); i++){
-        cout << numbers[i];
+        cout << numbers[i] << '\n';
     }
+    cout << "small " << smallest << '\n';
+    cout << "large " << largest << '\n';
+    cout << sum;
     keep_window_open();
     }
