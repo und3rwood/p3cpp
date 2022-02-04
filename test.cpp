@@ -39,10 +39,16 @@ int main()
         sort(numbers.begin(), numbers.end());
 
         if(conversion == numbers[numbers.size() - 1]){
-            cout << " largest so far! \n";
+            cout << conversion << " cm. largest so far! \n";
         } else if(conversion == numbers[0]){
-            cout << " smallest so far! \n";
+            cout << conversion << " cm. smallest so far! \n";
         }
     } 
 
+    sort(numbers.begin(), numbers.end());
+
+    for(int i = 0; i < numbers.size(); i++){
+        cout << numbers[i];
+    }
+    keep_window_open();
     }
