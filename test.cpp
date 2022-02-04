@@ -2,8 +2,15 @@
 
 int main()
 {
-    double input = 0;
-    string strinput = "";
+    double numInput = 0;
+    string strInput = " ";
+    string ft = "ft";
+    string cm = "cm";
+    string m = "m";
+    string in = "in";
+    
+    double sum = 0;
+    double conversion = 0;
     double smallest = 0;
     double largest = 0;
     double tiny = 1.0/10000000;
@@ -11,14 +18,29 @@ int main()
     double smaller = 0.0;
     vector<double>numbers;
     int i = 0;
-    while(cin >> input){
-        numbers.push_back(input);
+
+    while(cin >> numInput){
+        
+        cin >> strInput;
+        if(strInput == ft){
+            conversion = numInput*12*2.54; //convert to centimeters
+        } else if(strInput == in){
+            conversion = numInput*2.54;
+        } else if(strInput == m){
+            conversion = numInput*100;
+        } else if(strInput == cm){
+            conversion = numInput;
+        } else {
+            cout << "INVALID UNIT.\n";
+        }
+        sum += conversion;
+
+        numbers.push_back(conversion);
         sort(numbers.begin(), numbers.end());
 
-        cout << input;
-        if( input == numbers[numbers.size() - 1]){
+        if(conversion == numbers[numbers.size() - 1]){
             cout << " largest so far! \n";
-        } else if(input == numbers[0]){
+        } else if(conversion == numbers[0]){
             cout << " smallest so far! \n";
         }
     } 
